@@ -388,8 +388,8 @@ double alpha =1.95;
 	{
 		count[i] = -1 * count[i];
 	}			
-	Entr = Entr /KnownCases;
-   	Entr = (Log(Entr));
+	KnownCases =pow(KnownCases,alpha);
+   	Entr = (Log(Entr)-Log(KnownCases));
 	Entr *= q;	
 	count[i] /= KnownCases;
 	Entr *= count[i];
@@ -476,8 +476,9 @@ double q = 1/(1-alpha);
 	{
 		count[i] = -1 * count[i];
 	}
-	Entr = Entr /KnownCases;
-    	Entr =(Log(Entr))*q;
+	//Entr = Entr /KnownCases;
+	KnownCases =pow(KnownCases,alpha);
+    	Entr =(Log(Entr)-Log(KnownCases))*q;
 	count[i] /= KnownCases;
 	Entr *= count[i];
 	
