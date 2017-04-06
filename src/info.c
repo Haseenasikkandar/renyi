@@ -108,8 +108,9 @@ double alpha= 1.95;
         Sum += (pow(N,alpha));
 	TotalCases += N;
     	}
-	Sum = Sum /TotalCases;
-	Sum =(Log(Sum))*q;	
+	//Sum = Sum /TotalCases;
+	TotalCases =pow(TotalCases,alpha);
+	Sum =(Log(Sum)-Log(TotalCases))*q;	
     return Sum;
 }
 
